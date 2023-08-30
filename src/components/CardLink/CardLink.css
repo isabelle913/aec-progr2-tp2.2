@@ -1,0 +1,13 @@
+.image-container {
+  width: 100px;
+  padding: 5px;
+}
+
+.image {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.card-body {
+  align-self: center;
+}
