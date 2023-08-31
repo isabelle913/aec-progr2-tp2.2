@@ -1,0 +1,14 @@
+.tags-container {
+  margin: 0 auto;
+}
+.image-container {
+  max-width: 250px;
+  padding: 5px;
+}
+.image {
+  border-radius: 5px;
+  width: 100%;
+}
+h2 {
+  margin-bottom: 30px;
+}

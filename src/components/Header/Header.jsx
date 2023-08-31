@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 
 const Header = ({ isLinkVisible }) => {
-  console.log("isLinkVisible", isLinkVisible);
-
   return (
     <div>
       <div className="d-flex flex-row align-items-center">
