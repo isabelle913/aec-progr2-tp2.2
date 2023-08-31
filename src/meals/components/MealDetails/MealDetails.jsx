@@ -26,11 +26,11 @@ const MealDetails = () => {
   if (isLoading) return <div>Loading en cours...</div>;
   if (isError) return <div>Error: {error.message}</div>;
 
-  // console.log("data -> MealDetails", data);
+  //console.log("data -> MealDetails", data);
 
   return (
     <div className="container">
-      <Header isLinkVisible={true} />
+      <Header isLinkVisible={true} category={data.meals[0].strCategory} />
       {data &&
         data.meals.map((meal) => <CardDetails meal={meal} key={meal.idMeal} />)}
       <Footer />

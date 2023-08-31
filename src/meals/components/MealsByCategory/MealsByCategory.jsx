@@ -25,8 +25,10 @@ const MealsByCategory = () => {
   return (
     <div>
       <Header isLinkVisible={true} />
-
-      <h2 className="py-5">Une de ces recettes vous tente?</h2>
+      <div className="py-5">
+        <h2>Une de ces recettes vous tente?</h2>
+        <h3>Catégorie: {params.category}</h3>
+      </div>
       <div className="row justify-content-evenly">
         {data &&
           data.meals.map((meal) => (

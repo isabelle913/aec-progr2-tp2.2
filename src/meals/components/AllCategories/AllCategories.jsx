@@ -19,7 +19,6 @@ const AllCategories = () => {
 
   //console.log("data", data);
 
-  // TODO Pourrait mettre un spinner
   return (
     <div>
       <Header isLinkVisible={false} />

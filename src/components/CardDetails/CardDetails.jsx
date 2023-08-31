@@ -6,7 +6,7 @@ import CardDetailsBody from "./CardDetailsBody/CardDetailsBody";
 import "./CardDetails.css";
 
 const CardDetails = ({ meal }) => {
-  console.log("CardDetails", meal);
+  //console.log("CardDetails", meal);
 
   return (
     <Card bg="light" className="card-container gap-5">

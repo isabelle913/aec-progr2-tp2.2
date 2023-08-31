@@ -4,7 +4,7 @@ import Badges from "../Badges/Badges";
 import "./CardDetailHeader.css";
 
 const CardDetailsHeader = ({ meal }) => {
-  console.log(meal);
+  //console.log(meal);
   return (
     <div className="row">
       <div className="col d-flex flex-column justify-content-between">
@@ -17,7 +17,7 @@ const CardDetailsHeader = ({ meal }) => {
           </Card.Text>
           {meal.strArea && (
             <Card.Text as="h4" className="text-dark">
-              Cette provient : {meal.strArea}
+              Cette provient de cette région: {meal.strArea}
             </Card.Text>
           )}
         </div>
