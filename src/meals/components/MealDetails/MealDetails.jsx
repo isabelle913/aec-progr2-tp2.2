@@ -9,8 +9,6 @@ import MealsService from "../../services/MealsServices";
 
 import "./MealDetails.css";
 
-// TODO faire un lien pour revenir à la page de la categorie choisi
-
 const mealsService = new MealsService();
 
 const MealDetails = () => {

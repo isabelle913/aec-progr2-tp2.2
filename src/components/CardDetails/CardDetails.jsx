@@ -18,9 +18,3 @@ const CardDetails = ({ meal }) => {
 };
 
 export default CardDetails;
-
-// ingrédients
-// quantités // caché
-// instructions // caché
-
-// pourquoi pas tab pour ingrédients, pour instructions

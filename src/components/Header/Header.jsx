@@ -26,4 +26,3 @@ const Header = ({ isLinkVisible, category }) => {
 };
 
 export default Header;
-//`/category/${category.strCategory}`
