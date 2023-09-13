@@ -56,6 +56,21 @@ class MealsService {
 
     return mealDetail;
   }
+
+  async getAllFavorites(favoritesId) {
+    if (favoritesId.length) {
+      const responses = await Promise.all(
+        favoritesId.map((id) =>
+          fetch(`${this.baseUrl}${this.endpointDetail}${id}`)
+        )
+      );
+
+      // TODO trouver comment throw error
+
+      const data = await Promise.all(responses.map((res) => res.json()));
+      return data;
+    }
+  }
 }
 
 export default MealsService;
