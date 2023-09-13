@@ -1,10 +1,12 @@
 import Card from "react-bootstrap/Card";
 import Badges from "../Badges/Badges";
+import ButtonFavorite from "./ButtonFavorite/ButtonFavorite";
 
 import "./CardDetailHeader.css";
 
 const CardDetailsHeader = ({ meal }) => {
   //console.log(meal);
+
   return (
     <div className="row">
       <div className="col d-flex flex-column justify-content-between">
@@ -21,9 +23,11 @@ const CardDetailsHeader = ({ meal }) => {
             </Card.Text>
           )}
         </div>
+
         <div className="tags-container">
           {meal.strTags && <Badges tags={meal.strTags} />}
         </div>
+        <ButtonFavorite idMeal={meal.idMeal} />
       </div>
       {meal.strMealThumb && (
         <div className="col image-container">
