@@ -2,7 +2,6 @@ import Header from "../../../components/Header/Header";
 import Footer from "../../../components/Footer/Footer";
 import CardLink from "../../../components/CardLink/CardLink";
 import { useQuery } from "@tanstack/react-query";
-//import Button from "react-bootstrap/Button";
 import { /*useDispatch,*/ useSelector } from "react-redux";
 import { favoritesSelector } from "../../store/favoriteSelectors";
 //import {
@@ -22,31 +21,31 @@ const Favorites = () => {
     queryFn: () => mealsService.getAllFavorites(favoritesId),
   });
 
-  // TODO mettre guard si data est vide
-
   if (isLoading) return <div>Loading en cours...</div>;
-  if (isError) return <div>Error: {error.message}</div>;
-  data.map((res) => {
-    console.log("res", res);
-    console.log("res.meals", res.meals);
-    console.log("res.meals[0]", res.meals[0]);
-    console.log("res.meals[0].strMeal", res.meals[0].strMeal);
-  });
+  if (data !== undefined) {
+    if (isError) return <div>Error: {error.message}</div>;
+  }
+  // TODO si date = undefined
   return (
     <div>
       <Header isLinkVisible={true} />
       <div className="py-5">
         <h2>Vos recettes favorites</h2>
       </div>
-      {data &&
-        data.map((res) => (
-          <CardLink
-            name={res.meals[0].strMeal}
-            link={`/details/${res.meals[0].idMeal}`}
-            img={res.meals[0].strMealThumb}
-            key={res.meals[0].idMeal}
-          />
-        ))}
+      {!data && <p>Vous n'avez pas de recettes favorites</p>}
+      <div className="row justify-content-evenly">
+        {data &&
+          data.map((res) => (
+            <CardLink
+              name={res.meals[0].strMeal}
+              link={`/details/${res.meals[0].idMeal}`}
+              img={res.meals[0].strMealThumb}
+              key={res.meals[0].idMeal}
+              idMeal={res.meals[0].idMeal}
+              cardSize="big"
+            />
+          ))}
+      </div>
       <Footer />
     </div>
   );

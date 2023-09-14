@@ -65,7 +65,9 @@ class MealsService {
         )
       );
 
-      // TODO trouver comment throw error
+      responses.map((resp) => {
+        if (!resp.ok) throw new Error(`Error:getMealDetailById ${resp.status}`);
+      });
 
       const data = await Promise.all(responses.map((res) => res.json()));
       return data;

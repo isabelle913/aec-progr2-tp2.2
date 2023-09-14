@@ -20,8 +20,6 @@ const MealsByCategory = () => {
   if (isLoading) return <div>Loading en cours...</div>;
   if (isError) return <div>Error: {error.message}</div>;
 
-  //console.log("data -> mealsByCategory", data);
-
   return (
     <div>
       <Header isLinkVisible={true} />
@@ -37,6 +35,7 @@ const MealsByCategory = () => {
               link={`/details/${meal.idMeal}`}
               img={meal.strMealThumb}
               key={meal.idMeal}
+              idMeal={meal.idMeal}
               cardSize="big"
             />
           ))}

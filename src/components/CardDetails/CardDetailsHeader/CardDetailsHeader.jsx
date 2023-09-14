@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
 import Badges from "../Badges/Badges";
-import ButtonFavorite from "./ButtonFavorite/ButtonFavorite";
+import ButtonFavorite from "../../ButtonFavorite/ButtonFavorite";
 
 import "./CardDetailHeader.css";
 
