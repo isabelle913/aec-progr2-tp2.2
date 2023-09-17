@@ -14,8 +14,6 @@ const mealsService = new MealsService();
 const MealDetails = () => {
   const params = useParams();
 
-  // console.log("params", params.idMeal);
-
   const { isLoading, isError, data, error } = useQuery({
     queryKey: ["mealDetail"],
     queryFn: () => mealsService.getMealDetailById(params.idMeal),
@@ -23,8 +21,6 @@ const MealDetails = () => {
 
   if (isLoading) return <div>Loading en cours...</div>;
   if (isError) return <div>Error: {error.message}</div>;
-
-  //console.log("data -> MealDetails", data);
 
   return (
     <div className="container">

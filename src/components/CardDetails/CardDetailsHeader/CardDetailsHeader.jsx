@@ -5,7 +5,6 @@ import ButtonFavorite from "../../ButtonFavorite/ButtonFavorite";
 import "./CardDetailHeader.css";
 
 const CardDetailsHeader = ({ meal }) => {
-  //console.log(meal);
 
   return (
     <div className="row">

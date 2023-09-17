@@ -24,7 +24,6 @@ const Badges = ({ tags }) => {
     "info",
   ];
 
-  //console.log("tagsUnique", tagsUnique);
   return (
     <div>
       <Stack direction="horizontal" gap={2}>

@@ -17,8 +17,6 @@ const AllCategories = () => {
   if (isLoading) return <div>Loading en cours...</div>;
   if (isError) return <div>Error: {error.message}</div>;
 
-  //console.log("data", data);
-
   return (
     <div>
       <Header isLinkVisible={false} />

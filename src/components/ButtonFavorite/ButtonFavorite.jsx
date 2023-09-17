@@ -13,14 +13,18 @@ const ButtonFavorite = ({ idMeal, smallButton = false }) => {
   const isFavorite =
     favorites.filter((favorite) => favorite === idMeal).length > 0;
 
+  //console.log("favorites BEFORE", favorites);
   const onClick = (event) => {
     event.preventDefault();
+
     if (isFavorite) {
       return dispatch(removeFavorite(idMeal));
     } else {
       return dispatch(addFavorite(idMeal));
     }
   };
+  // console.log("favorites AFTER", favorites);
+  // Mathieu mon array de favori se met à jour mais pas l'affichage
 
   const textLong = isFavorite
     ? "Recette favorite"
@@ -31,31 +35,16 @@ const ButtonFavorite = ({ idMeal, smallButton = false }) => {
 
   return (
     <div>
-      {!smallButton && (
-        <OverlayTrigger
-          placement="bottom"
-          overlay={<Tooltip id="tooltip">{textTooltip}</Tooltip>}>
-          <Button
-            onClick={onClick}
-            size="lg"
-            variant={isFavorite ? "danger" : "outline-danger"}>
-            {textLong}
-          </Button>
-        </OverlayTrigger>
-      )}
-      {smallButton && (
-        <OverlayTrigger
-          placement="bottom"
-          overlay={<Tooltip id="tooltip">{textTooltip}</Tooltip>}>
-          <Button
-            onClick={onClick}
-            size="lg"
-            variant={isFavorite ? "danger" : "outline-danger"}
-            className="fs-1 ">
-            ♡
-          </Button>
-        </OverlayTrigger>
-      )}
+      <OverlayTrigger
+        placement="bottom"
+        overlay={<Tooltip id="tooltip">{textTooltip}</Tooltip>}>
+        <Button
+          onClick={onClick}
+          size="lg"
+          variant={isFavorite ? "danger" : "outline-danger"}>
+          {smallButton ? "♡" : textLong}
+        </Button>
+      </OverlayTrigger>
     </div>
   );
 };

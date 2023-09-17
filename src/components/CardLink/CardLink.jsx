@@ -10,11 +10,6 @@ const CardLink = ({ name, link, img, cardSize = "small", idMeal = 0 }) => {
       ? "col-6 col-md-4 col-xl-3 p-0 m-3"
       : "col-12 col-lg-5 p-0 m-3";
 
-  //TODO enlever au besoin
-  const onRefreshFavorite = () => {
-    console.log("onRefreshFavorite from cardLink");
-  };
-
   return (
     <Card bg="light" className={classCard}>
       <Link to={link}>
@@ -32,11 +27,7 @@ const CardLink = ({ name, link, img, cardSize = "small", idMeal = 0 }) => {
           </Card.Body>
           {idMeal != 0 && (
             <Card.Body>
-              <ButtonFavorite
-                idMeal={idMeal}
-                smallButton={true}
-                onRefreshFavorite={onRefreshFavorite}
-              />
+              <ButtonFavorite idMeal={idMeal} smallButton={true} />
             </Card.Body>
           )}
         </div>
